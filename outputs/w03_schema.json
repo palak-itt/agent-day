@@ -1,0 +1,102 @@
+{
+  "$defs": {
+    "ActionItem": {
+      "additionalProperties": false,
+      "properties": {
+        "task": {
+          "description": "A concrete next step, starting with a verb",
+          "title": "Task",
+          "type": "string"
+        },
+        "owner": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Person responsible, only if stated in the text",
+          "title": "Owner"
+        }
+      },
+      "required": [
+        "task"
+      ],
+      "title": "ActionItem",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "reasoning": {
+      "description": "1-2 sentences: what is the core issue and how urgesnt is it?",
+      "title": "Reasoning",
+      "type": "string"
+    },
+    "summary": {
+      "description": "One sentence summary, max 25 words",
+      "title": "Summary",
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "bug",
+        "billing",
+        "feature_request",
+        "account",
+        "other"
+      ],
+      "title": "Category",
+      "type": "string"
+    },
+    "priority": {
+      "enum": [
+        "low",
+        "medium",
+        "high",
+        "critical"
+      ],
+      "title": "Priority",
+      "type": "string"
+    },
+    "customer_email": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "description": "Customer's email address, only if stated in the text",
+      "title": "Customer Email"
+    },
+    "action_items": {
+      "anyOf": [
+        {
+          "items": {
+            "$ref": "#/$defs/ActionItem"
+          },
+          "type": "array"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Action Items"
+    }
+  },
+  "required": [
+    "reasoning",
+    "summary",
+    "category",
+    "priority",
+    "action_items"
+  ],
+  "title": "TicketInsight",
+  "type": "object"
+}

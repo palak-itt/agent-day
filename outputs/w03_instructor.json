@@ -1,0 +1,150 @@
+{
+  "summary": "Project sync lists four action items and keeps the launch date unchanged unless the performance issue is severe.",
+  "category": "other",
+  "reasoning": "The text records project decisions and assigned follow-ups, not a customer support issue. The potential schedule change depends on the severity of the performance issue; no urgency level is stated.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": [
+    {
+      "task": "Update the onboarding flow mockups by Friday",
+      "owner": "Maya"
+    },
+    {
+      "task": "Investigate the slow dashboard query and share findings by Wednesday",
+      "owner": "Dev"
+    },
+    {
+      "task": "Send the revised launch budget to Finance before the next planning meeting",
+      "owner": "Priya"
+    },
+    {
+      "task": "Schedule a customer-feedback review for next Monday",
+      "owner": "Omar"
+    }
+  ]
+}{
+  "summary": "Customer reports being charged $49.99 twice for a monthly subscription on October 24 and requests a refund.",
+  "category": "billing",
+  "reasoning": "The customer says both charges are completed and requests an immediate refund, indicating an unresolved billing issue. They report support has told them to wait, but no further urgency or impact is stated.",
+  "priority": "high",
+  "customer_email": "jordan.lee@example.com",
+  "action_items": [
+    {
+      "task": "Review the two completed October 24 subscription transactions and process a refund for the duplicate charge",
+      "owner": "billing team"
+    },
+    {
+      "task": "Email the customer when the refund has been processed",
+      "owner": "billing team"
+    }
+  ]
+}{
+  "summary": "The sender asks whether there is any update.",
+  "category": "other",
+  "reasoning": "The text is a brief request for an update, without context about the topic or urgency.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": []
+}{
+  "summary": "Project sync lists four follow-up tasks and keeps the current launch date unless the performance issue is severe.",
+  "category": "other",
+  "reasoning": "The text is meeting notes rather than a customer support issue. It identifies a performance concern but provides no indication that it is severe or urgent.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": [
+    {
+      "task": "Update the onboarding flow mockups by Friday",
+      "owner": "Maya"
+    },
+    {
+      "task": "Investigate the slow dashboard query and share findings by Wednesday",
+      "owner": "Dev"
+    },
+    {
+      "task": "Send the revised launch budget to Finance before the next planning meeting",
+      "owner": "Priya"
+    },
+    {
+      "task": "Schedule a customer-feedback review for next Monday",
+      "owner": "Omar"
+    }
+  ]
+}{
+  "summary": "Customer reports two completed $49.99 subscription charges on October 24 and requests a duplicate-charge refund.",
+  "category": "billing",
+  "reasoning": "The customer says they were charged twice for a monthly subscription and asks for an immediate refund; this is an urgent billing issue.",
+  "priority": "high",
+  "customer_email": "jordan.lee@example.com",
+  "action_items": [
+    {
+      "task": "Check the two October 24 subscription transactions",
+      "owner": "billing team"
+    },
+    {
+      "task": "Process a refund for the duplicate charge",
+      "owner": null
+    },
+    {
+      "task": "Email the customer when the refund has been processed",
+      "owner": null
+    }
+  ]
+}{
+  "summary": "The sender asks whether there is any update.",
+  "category": "other",
+  "reasoning": "The text is a brief request for an update and provides no context or urgency.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": []
+}{
+  "summary": "Project sync notes list four action items and a conditional decision to keep the current launch date.",
+  "category": "other",
+  "reasoning": "The text is meeting notes rather than a customer support issue. A performance issue is being investigated, but no severity or immediate urgency is established.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": [
+    {
+      "task": "Update the onboarding flow mockups by Friday",
+      "owner": "Maya"
+    },
+    {
+      "task": "Investigate the slow dashboard query and share findings by Wednesday",
+      "owner": "Dev"
+    },
+    {
+      "task": "Send the revised launch budget to Finance before the next planning meeting",
+      "owner": "Priya"
+    },
+    {
+      "task": "Schedule a customer-feedback review for next Monday",
+      "owner": "Omar"
+    }
+  ]
+}{
+  "summary": "Customer reports two completed $49.99 subscription charges on October 24 and requests a refund for the duplicate.",
+  "category": "billing",
+  "reasoning": "The customer says their monthly subscription was charged twice and asks for the duplicate charge to be refunded. They describe the issue as urgent and request a prompt refund.",
+  "priority": "high",
+  "customer_email": "jordan.lee@example.com",
+  "action_items": [
+    {
+      "task": "Check the two October 24 subscription transactions",
+      "owner": "billing team"
+    },
+    {
+      "task": "Process a refund for the duplicate charge",
+      "owner": "billing team"
+    },
+    {
+      "task": "Email the customer when the refund has been processed",
+      "owner": "billing team"
+    }
+  ]
+}{
+  "summary": "The sender asks whether there is any update.",
+  "category": "other",
+  "reasoning": "The text is a brief request for an update but gives no context about the matter. No urgency is stated.",
+  "priority": "low",
+  "customer_email": null,
+  "action_items": []
+}

@@ -1,0 +1,7 @@
+Project sync — October 27
+
+- Maya will update the onboarding flow mockups by Friday.
+- Dev will investigate the slow dashboard query and share findings by Wednesday.
+- Priya will send the revised launch budget to Finance before the next planning meeting.
+- Omar will schedule a customer-feedback review for next Monday.
+- We agreed to keep the current launch date for now, unless the performance issue turns out to be severe.
