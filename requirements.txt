@@ -18,4 +18,5 @@ langchain-mcp-adapters
 langfuse
 fastapi
 uvicorn
+scikit-learn
 pytest
