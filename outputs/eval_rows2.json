@@ -1,0 +1,149 @@
+[
+  {
+    "q": "My refund was not approved, why?",
+    "trap": false,
+    "answer": "I can\u2019t tell the specific reason from the information provided. Returns are available for damaged products requested within 30 days of delivery, and the product\u2019s condition and proof of purchase may be checked before approval. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately says the specific reason cannot be determined and reflects the policy: returns are for damaged products requested within 30 days, and condition and proof of purchase may be checked before approval.",
+    "failure": null
+  },
+  {
+    "q": "What is the CEO's favourite colour?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The context contains no information about the CEO's favourite colour, and the generated answer explicitly says it does not know based on the provided documents."
+  },
+  {
+    "q": "How much tim it takes for refud processing?",
+    "trap": false,
+    "answer": "Approved refunds are normally processed within 5 to 7 business days after the returned item has been inspected. [2]",
+    "hit": true,
+    "mrr": 0.5,
+    "faithful": true,
+    "correct": true,
+    "why": "The response accurately states that approved refunds are normally processed within 5 to 7 business days after inspection, matching the provided context and ground truth.",
+    "failure": null
+  },
+  {
+    "q": "Will me delivery charges be refunded too?",
+    "trap": true,
+    "answer": "Delivery charges are refunded if the product is defective or the delivery error was caused by the seller. They\u2019re not normally refunded for a change-of-mind return. [1]",
+    "pass": false,
+    "why": "The generated answer responds with the applicable delivery-charge refund conditions from the provided policy instead of stating that the documents lack sufficient information."
+  },
+  {
+    "q": "My manager wants to see my salary,a nd address",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": false,
+    "why": "The generated response explicitly says it does not know based on the provided documents, which is an appropriate abstention because the context does not address salary or address disclosure."
+  },
+  {
+    "q": "Emp X record does not exist in the system, even wht I created it, why?",
+    "trap": true,
+    "answer": "The record may have failed validation and been quarantined instead of loaded. Employee records are checked for required identifiers, approved department codes, and effective dates [5]. Check the quarantine or error records and the ingestion run\u2019s logs for rejection counts and error messages [1][5].",
+    "pass": false,
+    "why": "The generated answer gives a concrete possible cause\u2014failed validation and quarantine\u2014and presents it as an explanation for this employee's missing record. The documents describe that as a general possibility but do not establish that it happened to this record, so it did not correctly abstain from the unanswerable case."
+  },
+  {
+    "q": "employee data refund shipping time operation HR validation access",
+    "trap": true,
+    "answer": "- **Employee/HR data:** Employee personal information may only be accessed by people with a legitimate business need and should not be exposed in public reports or external responses. [2]\n- **Validation:** Before employee records are loaded, validate required identifiers, approved department codes, and effective dates; quarantine invalid records for review. [2] General data checks also cover completeness, uniqueness, validity, consistency, and timeliness. [3]\n- **Access:** Grant access through approved identity groups, and enforce permissions on the server side. [2]\n- **Refunds and shipping:** Damaged products may be returned within 30 days of delivery. Approved refunds are normally processed 5\u20137 business days after inspection. Standard shipping usually takes 3\u20135 business days, with extra time possible for remote locations. [1]",
+    "pass": false,
+    "why": "The generated answer provides substantive claims drawn from the supplied context rather than stating the information is insufficient. The context covers refunds, shipping, employee data handling, validation, and access control, so these details are supported even though the query is fragmentary."
+  },
+  {
+    "q": "Shouldn't query be understood, normalized too before looking for answer?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": false,
+    "why": "The generated answer explicitly abstains, but the context does not explain whether queries should be understood or normalized before searching for an answer. Since the question is unanswerable from the documents, the abstention is correct."
+  },
+  {
+    "q": "",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The generated answer explicitly says it does not know based on the provided documents. Since the context contains no specific question to answer, this is a proper abstention."
+  },
+  {
+    "q": "How should I troubleshoot a failed run?",
+    "trap": false,
+    "answer": "Check the run ID, source name, record counts, rejected-record count, processing duration, and error messages to identify where the run failed. [1] Review failed records and their recorded reasons, and compare failure counts and rates with the most common failure reasons. [2][5] If the failure appears temporary, retry the run; use idempotent writes to avoid duplicate records on retry. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer recommends using pipeline observability metrics and error details to diagnose the failed run, consistent with the ground truth and context. It also accurately includes reviewing failed-record reasons and retrying temporary failures with idempotent writes.",
+    "failure": null
+  },
+  {
+    "q": "What are custom and cross filed validators in pydantic?",
+    "trap": false,
+    "answer": "A **custom field validator** uses `field_validator` to apply checks beyond a field\u2019s declared type\u2014for example, ensuring a quantity is positive. [2]\n\nA **cross-field validator** uses a model validator when whether one field is valid depends on another\u2014for example, checking that `delivery_date` is not earlier than `order_date`. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately distinguishes custom field validators, which add checks beyond a field's declared type, from model-level cross-field validation, where one field's validity depends on another, and its examples match the context.",
+    "failure": null
+  },
+  {
+    "q": "How to choose a validator?",
+    "trap": false,
+    "answer": "Use built-in type constraints for simple checks. Choose a custom field validator for rules involving one field, and a model validator when a rule depends on multiple fields. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately reflects the context: built-in type constraints are for simple checks, field validators for rules about one field, and model validators for rules involving multiple fields.",
+    "failure": null
+  },
+  {
+    "q": "Alternative to pydantic?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": false,
+    "why": "The generated answer explicitly says it does not know based on the provided documents, which is a clear abstention. The documents discuss Pydantic but do not identify alternatives."
+  },
+  {
+    "q": "What are data quality checks, and list what validations to perform?",
+    "trap": false,
+    "answer": "Data quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications. [1]\n\nCommon validations to perform are: [4]\n- **Completeness:** required fields must not be null.\n- **Uniqueness:** identifiers, such as `customer_id`, should not be duplicated.\n- **Validity:** values must follow an expected format or allowed range.\n- **Consistency:** related fields must agree with one another.\n- **Timeliness:** data should arrive within the expected time window.",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The response accurately defines data quality checks using the context and lists all five common validations\u2014completeness, uniqueness, validity, consistency, and timeliness\u2014with descriptions matching the provided material.",
+    "failure": null
+  },
+  {
+    "q": "My name is khan, data and I am complete. validate me",
+    "trap": true,
+    "answer": "I can\u2019t confirm that you\u2019re complete: completeness means required fields must not be null, but no required fields are specified for your data. [1]",
+    "pass": false,
+    "why": "The generated answer makes a substantive interpretation of the user's data as possibly incomplete and says it cannot confirm completeness. The context only defines completeness generally and gives no information about the user's data or its required fields, so the correct response should clearly state the provided documents are insufficient to validate it."
+  },
+  {
+    "q": "schema drift",
+    "trap": false,
+    "answer": "Schema drift occurs when an upstream producer changes data structure\u2014for example, by adding or renaming a field or changing a data type. A robust ingestion pipeline should define which changes are allowed and reject or quarantine incompatible records. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately defines schema drift as a change in data structure made by an upstream producer and gives examples stated in the context. Its additional guidance about defining allowed changes and rejecting or quarantining incompatible records is also supported.",
+    "failure": null
+  }
+]
+/*
+hit@5     7/7
+MRR       0.93
+faithful  7/7
+correct   7/7
+traps ok  2/9
+*/

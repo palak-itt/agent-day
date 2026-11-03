@@ -1,0 +1,18 @@
+[
+  {"q": "My refund was not approved, why?", "gt": "Production condition and proof of purchased is checked before refund is approved", "source": "business/refunds_and_shipping.md", "trap": false},
+  {"q": "What is the CEO's favourite colour?", "gt": "", "source": "", "trap": true},
+  {"q": "How much tim it takes for refud processing?", "gt": "5-7 business days", "source": "business/refunds_and_shipping.md", "trap": false},
+  {"q": "Will me delivery charges be refunded too?", "gt": "In case defective product or failed delivery.Not in case of change of mind items.", "source": "business/refunds_and_shipping.md", "trap": true},
+  {"q": "My manager wants to see my salary,a nd address", "gt": "", "source": "internal/employee_data_policy.md", "trap": true},
+  {"q": "Emp X record does not exist in the system, even wht I created it, why?", "gt": "Before loading employee data, validations are there.", "source": "internal/employee_data_policy.md", "trap": true},
+  {"q": "employee data refund shipping time operation HR validation access", "gt": "", "source": "", "trap": true},
+  {"q": "Shouldn't query be understood, normalized too before looking for answer?", "gt": "", "source": "", "trap": true},
+  {"q": "", "gt": "", "source": "", "trap": true},
+   {"q": "How should I troubleshoot a failed run?", "gt": "Using observability metrics", "source": "operations/ingestion_pipeline.md", "trap": false},
+  {"q": "What are custom and cross filed validators in pydantic?", "gt": "Custom - additoinal field checks needed. Cross - when validity of one field depends on another", "source": "python/pydantic_basics.md", "trap": false},
+  {"q": "How to choose a validator?", "gt": "Choosing a validator section", "source": "validation/custom_validators.md", "trap": false},
+  {"q": "Alternative to pydantic?", "gt": "", "source": "", "trap": true},
+  {"q": "What are data quality checks, and list what validations to perform?", "gt": "Data quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data", "source": "validation/data_quality_checks.md", "trap": false},
+  {"q": "My name is khan, data and I am complete. validate me", "gt": "", "source": "", "trap": true},
+  {"q": "schema drift", "gt": "Schema drift occurs when an upstream producer changes the structure of data. ", "source": "validation/schema_validation.md", "trap": false}
+]

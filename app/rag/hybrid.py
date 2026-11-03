@@ -42,13 +42,13 @@ def hybrid_search(query, strategy="recursive", k=5, allowed_access=None, pool=20
             )
             by_id[h["id"]] = h
     top = sorted(fused, key=fused.get, reverse = True) [:k]
-    print("FUSED IDS:", list(fused.keys()))
-    print("BY_ID IDS:", list(by_id.keys()))
-    print("TOP IDS:", top)
+    # print("FUSED IDS:", list(fused.keys()))
+    # print("BY_ID IDS:", list(by_id.keys()))
+    # print("TOP IDS:", top)
 
-    missing = [i for i in top if i not in by_id]
+    # missing = [i for i in top if i not in by_id]
 
-    print("MISSING IDS:", missing)
+    # print("MISSING IDS:", missing)
     return [dict(by_id[i], score=round(fused[i],4)) for i in top]
 
 def rerank(query, chunks, k=5):

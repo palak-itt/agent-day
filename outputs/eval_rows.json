@@ -1,0 +1,133 @@
+[
+  {
+    "q": "My refund was not approved, why?",
+    "trap": false,
+    "answer": "I don't know based on the provided documents.",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": false,
+    "correct": false,
+    "why": "The provided policy says product condition and proof of purchase may be checked before a return is approved. The answer incorrectly says there is no information, despite that relevant explanation in the context.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "What is the CEO's favourite colour?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true
+  },
+  {
+    "q": "How much tim it takes for refud processing?",
+    "trap": false,
+    "answer": "Approved refunds are normally processed within 5 to 7 business days after the returned item has been inspected. [2]",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer matches the context: approved refunds are normally processed within 5 to 7 business days after inspection of the returned item.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "Will me delivery charges be refunded too?",
+    "trap": true,
+    "answer": "Delivery charges are refunded if the product is defective or the delivery error was caused by the seller. They\u2019re not normally refunded for a change-of-mind return. [1]",
+    "pass": false
+  },
+  {
+    "q": "My manager wants to see my salary,a nd address",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true
+  },
+  {
+    "q": "Emp X record does not exist in the system, even wht I created it, why?",
+    "trap": true,
+    "answer": "The exact reason isn\u2019t specified. One possibility is that the employee record failed validation\u2014required identifiers, approved department codes, and effective dates are checked, and invalid records are quarantined for review. [5] Check the ingestion run\u2019s rejected-record count and error messages for clues. [1]",
+    "pass": false
+  },
+  {
+    "q": "employee data refund shipping time operation HR validation access",
+    "trap": true,
+    "answer": "- **Employee/HR data access:** Employee personal information may be accessed only by people with a legitimate business need, and employee records must not be exposed in public reports or external responses. Access should use approved identity groups, with permissions enforced server-side. [2]\n- **Employee record validation:** Before loading employee records, validate required identifiers, approved department codes, and effective dates; quarantine invalid records for review. [2]\n- **Refunds:** Damaged-product returns can be requested within 30 days of delivery. Approved refunds are normally processed within 5\u20137 business days after inspection. [1]\n- **Shipping:** Standard shipping usually takes 3\u20135 business days; remote locations may take longer. [1]",
+    "pass": false
+  },
+  {
+    "q": "Shouldn't query be understood, normalized too before looking for answer?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true
+  },
+  {
+    "q": "",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true
+  },
+  {
+    "q": "How should I troubleshoot a failed run?",
+    "trap": false,
+    "answer": "To troubleshoot a failed run:\n\n1. Check the run\u2019s logs for its run ID, source, record counts, rejected-record count, processing duration, and error messages. [1]\n2. Review rejected rows and their recorded reasons; check validation metrics such as failure rate and the most common failure reasons. [2][5]\n3. Identify which stage failed\u2014extraction, validation, transformation, or writing\u2014and investigate the corresponding error. [1]\n4. If the error appears temporary, retry the run; ensure writes are idempotent so retries don\u2019t create duplicate records. [1]",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer appropriately explains troubleshooting through observability metrics, including run logs, counts, duration, error messages, validation failure rates, and common failure reasons, all supported by the supplied context. It also includes reasonable stage investigation and retry/idempotency guidance from the context.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "What are custom and cross filed validators in pydantic?",
+    "trap": false,
+    "answer": "A **custom field validator** (`field_validator`) adds checks beyond a field\u2019s declared type\u2014for example, requiring a positive quantity or an acceptable email format. [2]\n\nA **cross-field validator** (a model validator) checks a rule involving multiple fields, such as ensuring `delivery_date` is not earlier than `order_date`. [1]",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately distinguishes custom field validators, which add checks beyond a field's declared type, from model validators that enforce conditions involving multiple fields. Its examples are supported by the supplied context.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "How to choose a validator?",
+    "trap": false,
+    "answer": "Use built-in type constraints for simple checks. Use a custom field validator for a rule about one field, and a model validator when the rule involves multiple fields. [1]",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately restates the context\u2019s guidance: use built-in constraints for simple checks, a custom field validator for a single field, and a model validator for rules involving multiple fields.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "Alternative to pydantic?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true
+  },
+  {
+    "q": "What are data quality checks, and list what validations to perform?",
+    "trap": false,
+    "answer": "Data quality checks identify incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications. [1]\n\nValidations to perform include: [4]\n- **Completeness:** Required fields are not null.\n- **Uniqueness:** Identifiers, such as `customer_id`, are not duplicated.\n- **Validity:** Values follow expected formats or allowed ranges.\n- **Consistency:** Related fields agree with one another.\n- **Timeliness:** Data arrives within the expected time window.",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately defines data quality checks using the context and lists all five stated validation categories with their descriptions.",
+    "failure": "retrieval"
+  },
+  {
+    "q": "My name is khan, data and I am complete. validate me",
+    "trap": true,
+    "answer": "I can\u2019t confirm that the data is complete without knowing which fields are required. Completeness means required fields must not be null. [1]",
+    "pass": false
+  },
+  {
+    "q": "schema drift",
+    "trap": false,
+    "answer": "Schema drift occurs when an upstream producer changes the data structure\u2014for example, by adding or renaming a field or changing a data type. A robust ingestion pipeline should define which changes are allowed and reject or quarantine incompatible records. [1]",
+    "hit": false,
+    "mrr": 0.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately defines schema drift as an upstream producer changing data structure, gives examples stated in the context, and correctly describes the pipeline's handling of allowed and incompatible changes.",
+    "failure": "retrieval"
+  }
+]
