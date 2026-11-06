@@ -21,3 +21,5 @@ uvicorn
 scikit-learn
 pytest
 sentence-transformers
+ragas
+google-genai

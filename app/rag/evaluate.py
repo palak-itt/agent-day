@@ -29,12 +29,22 @@ def judge_trap(q, answer, ctx):
         messages=[{
             "role": "user",
             "content": f"""
-            The question is unanswerable using the provided documents.
+            Evaluate whether the RAG system correctly handled this question.
 
-            Determine whether the RAG system correctly abstained.
+            The question is labelled as unanswerable in the evaluation dataset.
+            Your task is to evaluate ONLY the generated answer.
+
+            Set abstained=True if:
+            - The answer clearly says the documents lack sufficient information.
+            - It does not present an unsupported explanation as fact.
+
+            Set abstained=False if:
+            - It gives an unsupported answer.
+            - It guesses or invents a specific explanation.
+            - It presents speculation as established fact.
 
             Question: {q}
-            Context: {ctx}
+            Retrieved context: {ctx}
             Generated answer: {answer}
             """
         }]
@@ -84,4 +94,4 @@ if __name__ == "__main__":
     for r in rows:
         if r.get("failure") or r.get("pass") is False:
             print("\nFAIL:", r["q"], "->", r.get("failure", "trap answered"), "|", r["answer"][:150])
-    json.dump(rows, open("outputs/eval_rows2.json", "a"), indent=2)
+    json.dump(rows, open("outputs/eval_rows_fixed.json", "a"), indent=2)

@@ -1,0 +1,148 @@
+[
+  {
+    "q": "My refund was not approved, why?",
+    "trap": false,
+    "answer": "I can\u2019t determine the specific reason from the provided documents. Returns for damaged products may be checked for product condition and proof of purchase before approval, but the documents don\u2019t explain why your particular refund was denied. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately states that the policy allows product condition and proof of purchase to be checked before approval, and appropriately notes that the context does not identify the specific reason this refund was denied.",
+    "failure": null
+  },
+  {
+    "q": "What is the CEO's favourite colour?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The answer explicitly says it does not know based on the provided documents and makes no unsupported claim about the CEO\u2019s favourite colour."
+  },
+  {
+    "q": "How much tim it takes for refud processing?",
+    "trap": false,
+    "answer": "Approved refunds are normally processed within 5 to 7 business days after the returned item has been inspected. [2]",
+    "hit": true,
+    "mrr": 0.5,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately states the refund processing timeline from the context: 5 to 7 business days after the returned item is inspected.",
+    "failure": null
+  },
+  {
+    "q": "Will me delivery charges be refunded too?",
+    "trap": true,
+    "answer": "Delivery charges are refunded if the product is defective or the delivery error was caused by the seller. They\u2019re not normally refunded for a change-of-mind return. [1]",
+    "pass": false,
+    "why": "The answer gives conditional refund rules from the retrieved context, but it does not clearly state that the documents lack information about the user's specific case. Since the question is labeled unanswerable and no reason for the return or delivery issue is provided, it presents an unsupported case-specific conclusion."
+  },
+  {
+    "q": "My manager wants to see my salary,a nd address",
+    "trap": true,
+    "answer": "Salary and address are employee personal information, so your manager should access them only if they have a legitimate business need and access through an approved identity group. [4] Don\u2019t share them in a public report or external response. [4]",
+    "pass": false,
+    "why": "The answer asserts a specific access-control explanation and recommendation for the manager rather than saying the documents lack sufficient information to determine whether the manager may see the salary and address. Although the retrieved policy discusses employee data access generally, it does not establish the manager's authorization or answer the specific request."
+  },
+  {
+    "q": "Emp X record does not exist in the system, even wht I created it, why?",
+    "trap": true,
+    "answer": "I can\u2019t determine the exact reason from the available information. Employee records with invalid required identifiers, unapproved department codes, or invalid effective dates should be quarantined for review, so check whether Emp X was quarantined. [5] Also check the ingestion run\u2019s record counts and error messages for clues. [1]",
+    "pass": true,
+    "why": "The answer explicitly says the exact reason cannot be determined from the available information. It offers quarantine and ingestion-log checks as possibilities and troubleshooting steps grounded in the retrieved context, not as a definite explanation for why the employee record is missing."
+  },
+  {
+    "q": "employee data refund shipping time operation HR validation access",
+    "trap": true,
+    "answer": "- **Employee/HR data:** Employee personal information is for internal employees and authorized administrators, and may only be accessed by people with a legitimate business need. [2] Required identifiers, approved department codes, and effective dates must be validated before records are loaded; invalid records should be quarantined for review. [2] Access should use approved identity groups, with permissions enforced server-side. [2]\n- **Refunds and shipping:** Approved refunds are normally processed within 5\u20137 business days after inspection. [1] Standard shipping usually takes 3\u20135 business days, though remote locations may take longer. [1] Delivery charges are refunded for defective products or seller-caused delivery errors, but normally not for change-of-mind returns. [1]",
+    "pass": false,
+    "why": "The generated answer supplies policy details from the retrieved context, but it does not state that the documents lack sufficient information. The query is ambiguous and appears to request information about employee data, refunds, shipping time, and HR validation/access; the response treats these as answerable topics rather than abstaining."
+  },
+  {
+    "q": "Shouldn't query be understood, normalized too before looking for answer?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The generated answer explicitly says it does not know based on the provided documents, and offers no unsupported explanation."
+  },
+  {
+    "q": "",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The generated answer explicitly says it does not know based on the provided documents and offers no unsupported explanation."
+  },
+  {
+    "q": "How should I troubleshoot a failed run?",
+    "trap": false,
+    "answer": "To troubleshoot a failed run:\n\n1. Use the pipeline run ID to find its logs, then review the source name, record counts, processing duration, and error messages. These help identify what happened during the run. [2]\n2. Check validation results: review rejected-record counts and reasons, and inspect invalid rows to see which quality rules they failed. [2][5]\n3. Track the number of records checked, failed records, failure rate, and common failure reasons; compare the failure rate with your alert threshold. [5]\n4. If the error appears temporary, retry the run. Confirm writes are idempotent so a retry does not create duplicate records. [2]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer correctly emphasizes using observability metrics and logs to troubleshoot a failed run, including run IDs, counts, durations, errors, rejected-record details, and failure rates. Its retry and idempotency guidance is also supported by the context.",
+    "failure": null
+  },
+  {
+    "q": "What are custom and cross filed validators in pydantic?",
+    "trap": false,
+    "answer": "In Pydantic, a **custom field validator** adds application-specific checks to one field\u2014for example, checking that an email contains `@`. It can accept or reject the value, and may normalize it. [2][3]\n\nA **cross-field validator** (a model-level validator) checks a rule that depends on multiple fields\u2014for example, ensuring an end date is later than a start date. [3]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer correctly distinguishes custom field validators, which enforce additional application-specific checks on an individual field, from cross-field/model validators, which enforce rules involving multiple fields. Its examples and notes about normalization are supported by the context.",
+    "failure": null
+  },
+  {
+    "q": "How to choose a validator?",
+    "trap": false,
+    "answer": "Use built-in type constraints for simple checks. Use a custom field validator for rules about one field, and a model validator when a rule involves multiple fields\u2014for example, ensuring an end date is later than a start date. [1][3]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately summarizes the provided guidance: built-in constraints for simple checks, field validators for single-field rules, and model validators for cross-field rules, including the end-date example.",
+    "failure": null
+  },
+  {
+    "q": "Alternative to pydantic?",
+    "trap": true,
+    "answer": "I don't know based on the provided documents.",
+    "pass": true,
+    "why": "The generated answer explicitly says it does not know based on the provided documents and does not offer an unsupported alternative."
+  },
+  {
+    "q": "What are data quality checks, and list what validations to perform?",
+    "trap": false,
+    "answer": "Data quality checks detect incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications. [2]\n\nCommon validations to perform include: [2]\n- **Completeness:** required fields are not null.\n- **Uniqueness:** identifiers, such as `customer_id`, are not duplicated.\n- **Validity:** values follow the expected format or allowed range.\n- **Consistency:** related fields agree with one another.\n- **Timeliness:** data arrives within the expected time window.\n\nYou can also add business-specific checks\u2014for example, require transaction amounts to be positive or ensure a delivery date is not earlier than an order date. [2][5]",
+    "hit": true,
+    "mrr": 0.5,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately defines data quality checks and lists the five common validation categories from the context, with supported examples of custom business rules.",
+    "failure": null
+  },
+  {
+    "q": "My name is khan, data and I am complete. validate me",
+    "trap": true,
+    "answer": "The `name` field is present, so it passes a basic completeness check. I can\u2019t confirm that the whole record is complete without knowing which fields are required. [1]",
+    "pass": true,
+    "why": "The answer limits its claim to a basic completeness check and explicitly says it cannot confirm the whole record without knowing the required fields. It does not invent unsupported information."
+  },
+  {
+    "q": "schema drift",
+    "trap": false,
+    "answer": "Schema drift occurs when an upstream producer changes a data structure\u2014for example, by adding or renaming a field or changing a data type. A robust ingestion pipeline should define which changes are allowed and reject or quarantine incompatible records. [1]",
+    "hit": true,
+    "mrr": 1.0,
+    "faithful": true,
+    "correct": true,
+    "why": "The answer accurately states that schema drift is caused by upstream changes to data structure and gives examples explicitly supported by the context. Its note about defining allowed changes and rejecting or quarantining incompatible records also matches the context.",
+    "failure": null
+  }
+]
+
+// hit@5     7/7
+// MRR       0.86
+// faithful  7/7
+// correct   7/7
+// traps ok  6/9

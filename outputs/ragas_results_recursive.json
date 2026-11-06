@@ -1,0 +1,189 @@
+{
+  "strategy": "recursive",
+  "k": 5,
+  "judge_model": "gpt-6-luna",
+  "embedding_model": "gemini-embedding-001",
+  "total_questions": 16,
+  "generated_answers": 2,
+  "evaluated_questions": 1,
+  "summary": {
+    "faithfulness": 0.75,
+    "answer_relevance": 0.7883620057682895,
+    "context_precision": null,
+    "context_recall": null
+  },
+  "rows": [
+    {
+      "question_index": 0,
+      "q": "My refund was not approved, why?",
+      "reference": "Production condition and proof of purchased is checked before refund is approved",
+      "source": "business/refunds_and_shipping.md",
+      "trap": false,
+      "scores": {
+        "faithfulness": 0.75,
+        "answer_relevance": 0.7883620057682895
+      },
+      "metric_errors": {
+        "context_precision": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99496, Requested 1267. Please try again in 5h29m36.96s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}",
+        "context_recall": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99496, Requested 2532. Please try again in 14h36m5.76s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+      },
+      "response": "The policy says returns can be requested for damaged products within 30 days of delivery, and the product’s condition and proof of purchase may be checked before approval. These checks or the return window may be relevant, but the documents don’t say why your specific refund was not approved. [1]",
+      "retrieved_contexts": [
+        "# Refund and Shipping Policy\n\n## Returns\nCustomers can request a return for damaged products within 30 days of delivery. The product condition and proof of purchase may be checked before the return is approved.\n\n## Refund timeline\nApproved refunds are normally processed within 5 to 7 business days after the returned item has been inspected.\n\n## Delivery charges\nDelivery charges are refunded when the product is defective or the delivery error was caused by the seller. Delivery charges are not normally refunded for a change-of-mind return.\n\n## Shipping time\nStandard shipping usually takes 3 to 5 business days. Remote locations may require additional time.",
+        "# Data Quality Checks\n\n## Why validate data?\nData quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications.\n\n## Common validation rules\n- Completeness: required fields must not be null.\n- Uniqueness: identifiers such as customer_id should not be duplicated.\n- Validity: values must follow an expected format or allowed range.\n- Consistency: related fields must agree with one another.\n- Timeliness: data should arrive within the expected time window.\n",
+        "# Data Quality Checks\n\n## Why validate data?\nData quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications.\n\n## Common validation rules\n- Completeness: required fields must not be null.\n- Uniqueness: identifiers such as customer_id should not be duplicated.\n- Validity: values must follow an expected format or allowed range.\n- Consistency: related fields must agree with one another.\n- Timeliness: data should arrive within the expected time window.\n",
+        "# Data Quality Checks\n\n## Why validate data?\nData quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data before it is used in reports or downstream applications.\n",
+        "# Custom Data Validators\n\n## What is a custom validator?\nA custom validator is a function or rule that checks whether incoming data satisfies application-specific requirements. It is useful when built-in type checks are not enough.\n\nFor example, an order system may require that an order quantity is greater than zero, an email address contains a valid domain, or a status belongs to an approved set of values.\n\n## Writing a custom validator in Python\nA simple validator can raise a ValueError when a value is invalid.\n\n```python\ndef validate_quantity(value):\n    if value <= 0:\n        raise ValueError(\"Quantity must be greater than zero\")\n    return value\n```\n\nThe function receives a value, checks a business rule, and either returns the valid value or raises an error.\n"
+      ]
+    },
+    {
+      "question_index": 1,
+      "q": "What is the CEO's favourite colour?",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99496, Requested 927. Please try again in 3h2m44.16s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 2,
+      "q": "How much tim it takes for refud processing?",
+      "reference": "5-7 business days",
+      "source": "business/refunds_and_shipping.md",
+      "trap": false,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99496, Requested 924. Please try again in 3h1m26.4s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 3,
+      "q": "Will me delivery charges be refunded too?",
+      "reference": "In case defective product or failed delivery.Not in case of change of mind items.",
+      "source": "business/refunds_and_shipping.md",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99495, Requested 905. Please try again in 2h52m48s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 4,
+      "q": "My manager wants to see my salary,a nd address",
+      "reference": "",
+      "source": "internal/employee_data_policy.md",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99495, Requested 959. Please try again in 3h16m7.68s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 5,
+      "q": "Emp X record does not exist in the system, even wht I created it, why?",
+      "reference": "Before loading employee data, validations are there.",
+      "source": "internal/employee_data_policy.md",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99495, Requested 840. Please try again in 2h24m43.2s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 6,
+      "q": "employee data refund shipping time operation HR validation access",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99495, Requested 847. Please try again in 2h27m44.64s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 7,
+      "q": "Shouldn't query be understood, normalized too before looking for answer?",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99495, Requested 944. Please try again in 3h9m38.88s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 8,
+      "q": "",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "response": "I don't know based on the provided documents.",
+      "retrieved_contexts": [
+        "# Pydantic Model Validation\n",
+        "# Pydantic Model Validation\n\n## What is Pydantic?\nPydantic is a Python library for parsing and validating data using type annotations. It is commonly used to validate API request bodies and configuration objects.\n",
+        "# Custom Data Validators\n",
+        "# Data Quality Checks\n",
+        "# Pydantic Model Validation\n\n## What is Pydantic?\nPydantic is a Python library for parsing and validating data using type annotations. It is commonly used to validate API request bodies and configuration objects.\n\n## Basic model\n```python\nfrom pydantic import BaseModel\n\nclass Order(BaseModel):\n    order_id: int\n    quantity: int\n```\n\nCreating an Order validates and parses the supplied values against the declared fields.\n"
+      ],
+      "skipped": true,
+      "skip_reason": "Trap/no-reference row"
+    },
+    {
+      "question_index": 9,
+      "q": "How should I troubleshoot a failed run?",
+      "reference": "Using observability metrics",
+      "source": "operations/ingestion_pipeline.md",
+      "trap": false,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99813, Requested 871. Please try again in 4h55m29.28s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 10,
+      "q": "What are custom and cross filed validators in pydantic?",
+      "reference": "Custom - additoinal field checks needed. Cross - when validity of one field depends on another",
+      "source": "python/pydantic_basics.md",
+      "trap": false,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99813, Requested 721. Please try again in 3h50m41.28s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 11,
+      "q": "How to choose a validator?",
+      "reference": "Choosing a validator section",
+      "source": "validation/custom_validators.md",
+      "trap": false,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99813, Requested 858. Please try again in 4h49m52.32s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 12,
+      "q": "Alternative to pydantic?",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99812, Requested 625. Please try again in 3h8m47.04s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 13,
+      "q": "What are data quality checks, and list what validations to perform?",
+      "reference": "Data quality checks help detect incomplete, inconsistent, inaccurate, or unexpected data",
+      "source": "validation/data_quality_checks.md",
+      "trap": false,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99812, Requested 591. Please try again in 2h54m5.76s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    },
+    {
+      "question_index": 14,
+      "q": "My name is khan, data and I am complete. validate me",
+      "reference": "",
+      "source": "",
+      "trap": true,
+      "scores": {},
+      "metric_errors": {},
+      "generation_error": "Error code: 429 - {'error': {'message': 'Rate limit reached for gpt-6-luna in organization org-NuEMdipLEjTiobXJuEM0uw53 on tokens per min (TPM): Limit 100000, Used 99812, Requested 635. Please try again in 3h13m6.24s. Visit https://platform.openai.com/account/rate-limits to learn more. You can increase your rate limit by adding a payment method to your account at https://platform.openai.com/account/billing.', 'type': 'tokens', 'param': None, 'code': 'rate_limit_exceeded'}}"
+    }
+  ]
+}
