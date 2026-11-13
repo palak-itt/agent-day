@@ -91,11 +91,11 @@ def ask_gpt(prompt, system=None, **options):
     # print(resp)
     return resp.choices[0].message.content, usage, dt
 
-def chat_model(backend=None, temperature=0):
+def chat_model(backend=None, temperature=1):
     """Langchain chat model used by LangGraph agents"""
     backend= backend or os.getenv("LLM_BACKEND", "openai")
     if backend == "openai":
         from langchain_openai import ChatOpenAI
-        return ChatOpenAI(model=OPENAI_MODEL, temperature=temperature, max_tokens =1024)
+        return ChatOpenAI(model=OPENAI_MODEL, temperature=temperature, reasoning_effort="none", max_completion_tokens =1024)
     from langchain_ollama import ChatOllama
     return ChatOllama(model=OLLAMA_MODEL, temperature=temperature)
