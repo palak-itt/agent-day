@@ -2,7 +2,7 @@ import os
 from langchain_core.tools import tool
 from app.rag.hybrid import hybrid_search
 
-def make_tools(allowed_access=("Public",)):
+def make_tools(allowed_access=("public",)):
     @tool
     def search_docs(query: str) -> str:
         """Search the documentation set. Returns passages tagged [file#chunk]. Use for ANY factual questions about the docs"""

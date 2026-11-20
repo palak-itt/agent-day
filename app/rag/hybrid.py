@@ -31,6 +31,7 @@ def keyword_search(query, strategy="recursive", k=20, allowed_access=None):
     return out
 
 def hybrid_search(query, strategy="recursive", k=5, allowed_access=None, pool=20):
+    
     where = {"access": {"$in": list(allowed_access)}} if allowed_access else None
     sem = search(query, strategy, k=pool, where=where)
     kw = keyword_search(query, strategy, k=pool, allowed_access=allowed_access)
